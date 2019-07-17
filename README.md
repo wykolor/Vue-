@@ -16,7 +16,6 @@
             return 'PC';
         }
     },
-```
 2. 移动端input框兼容IOS(解决IOS设备上面input框上移之后不恢复问题)
 ```javascript
 *针对Vue，在main.js文件引入一下内容
