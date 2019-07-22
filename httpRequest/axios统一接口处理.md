@@ -214,7 +214,7 @@ export function post(url, params) {
     });
 }
 ```
-#同意API管理
+#统一API管理
 ```JavaScript
 import { get, post } from './http';
 
