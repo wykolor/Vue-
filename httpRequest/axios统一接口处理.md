@@ -10,13 +10,12 @@ import store from '../store/store';
 // vant的toast提示框组件
 import { Toast,Dialog} from 'vant'; 
 // 环境的切换
-if (process.env.NODE_ENV == 'development') {    //开发环境
+if (process.env.NODE_ENV == 'development') {    //开发环境 配置跨域
     axios.defaults.baseURL = '/api';//从main.js中引入的处理跨域的
 } else if (process.env.NODE_ENV == 'debug') {  //测试环境  
-    axios.defaults.baseURL = 'http://test.keplerlab.cn';
-    // axios.defaults.baseURL = 'http://192.168.31.32:8080';
+    axios.defaults.baseURL = '';
 } else if (process.env.NODE_ENV == 'production') {   //生产环境 
-    axios.defaults.baseURL = 'http://dhmall.keplerlab.cn';
+    axios.defaults.baseURL = '';
 }
 // 请求超时时间
 axios.defaults.timeout = 2000;
@@ -221,143 +220,104 @@ import { get, post } from './http';
 
 // -------------------------云品汇----------------
 // 首页头部轮播图
-let bannerUrl = '/core/api/sales/Article_banner';
+let bannerUrl = '';
 // 主题精选轮播图
-let topicBannerUrl = '/core/api/sales/Article_bannerSelected';
+let topicBannerUrl = '';
 // 猜你喜欢
-let guessYouLikeUrl = '/core/api/sales/op/mall/FootPrint_guessYouLike';
+let guessYouLikeUrl = '';
 // 足迹
-let footPrintUrl = '/core/api/sales/op/mall/FootPrint_getCustomerFootPrint';
+let footPrintUrl = '';
 // 删除足迹
-let delFootPrintUrl = '/core/api/sales/op/mall/FootPrint_deleteCustomerFootPrint';
+let delFootPrintUrl = '';
 // 添加足迹
-let addFootPrintUrl = '/core/api/sales/op/mall/FootPrint_addCustomerFootPrint';
+let addFootPrintUrl = '';
 // 地址列表信息
-let addressListUrl = '/core/api/customer/CustomerAddress_addressList';
+let addressListUrl = '';
 // 查询地址信息
-let readAddressUrl = '/core/api/customer/CustomerAddress_loadCustomerAddress';
+let readAddressUrl = '';
 // 新增地址信息
-let addAddressListUrl = '/core/api/customer/CustomerAddress_addCustomerAddress';
+let addAddressListUrl = '';
 // 修改地址信息
-let changeAddressListUrl = '/core/api/customer/CustomerAddress_modify';
+let changeAddressListUrl = '';
 // 删除地址信息
-let delAddressListUrl = '/core/api/customer/CustomerAddress_remove';
+let delAddressListUrl = '';
 // 新增搜索历史
-let addHistoryUrl = '/core/api/sales/op/mall/SearchHistory_addCustomerSearchHistory';
+let addHistoryUrl = '';
 // 查询历史
-let historyUrl = '/core/api/sales/op/mall/SearchHistory_getCustomerSearchHistoryPOs';
+let historyUrl = '';
 // 删除历史
-let delhistoryUrl = '/core/api/sales/op/mall/SearchHistory_removeAll';
+let delhistoryUrl = '';
 // 补全搜索
-let completeSearchUrl = '/core/api/sales/op/mall/Goods_complementGoodsName';
+let completeSearchUrl = '';
 // 按名称搜索商品
-let searchGoodsListUrl = '/core/api/sales/op/mall/Goods_searchGoodsByName';
+let searchGoodsListUrl = '';
 // 广告展示
-let adShowUrl = '/core/api/cms/Article_getAdvertisement';
+let adShowUrl = '';
 // 加入购物车
-let addShopcarUrl = '/core/api/sales/op/mall/Order_addToCart'; 
+let addShopcarUrl = ''; 
 // 修改购物车中商品数量
-let goodsNumCarUrl = '/core/api/sales/op/mall/Order_changeAmountInCart';
+let goodsNumCarUrl = '';
 // 查看购物车列表
-let shopCarListUrl = '/core/api/sales/op/mall/Order_listCart';
+let shopCarListUrl = '';
 // 在购物车中下单
-let shopCarOrdergoodsUrl = '/core/api/sales/op/mall/Order_createOrderThroughCart';
+let shopCarOrdergoodsUrl = '';
 // 获取商品运费
-let goodsTransUrl = '/core/api/sales/op/mall/Order_transFee';
+let goodsTransUrl = '';
 // 单个商品下单
-let orderNewUrl = '/core/api/sales/op/mall/Order_createOrderStraight';
+let orderNewUrl = '';
 // 确认订单显示页面-订单详情-购买确认页面
-let orderSureUrl = '/core/api/sales/op/mall/Order_orderDetail';
+let orderSureUrl = '';
 // 取消订单
-let cancelOrderUrl = '/core/api/sales/op/mall/Order_cancelOrder';
+let cancelOrderUrl = '';
 // 完成订单
-let orderFinishUrl = '/core/api/sales/op/mall/Order_finishOrder';
+let orderFinishUrl = '';
 // 查看订单列表
-let AllOrderUrl = '/core/api/sales/op/mall/Order_listOrderByTime';
+let AllOrderUrl = '';
 // 一级分类tab
-let oneClassListUrl = '/core/api/sales/op/mall/GoodsCategory_getGoodsCategory';
+let oneClassListUrl = '';
 // 二级分类tab
-let secondClassListUrl = '/core/api/sales/op/mall/GoodsCategory_getGoodsCategoryByParentId';
+let secondClassListUrl = '';
 // 添加分类
-let addClassGoodsUrl = '/core/api/sales/op/mall/Goods_addCategory';
+let addClassGoodsUrl = '';
 // 商品分类列表+所有商品列表
-let goodsListUrl = '/core/api/sales/op/mall/Goods_listGoodsHomeVO';
+let goodsListUrl = '';
 // 修改用户名
-let changeUsernameUrl = '/core/api/sales/Customer_changeName';
+let changeUsernameUrl = '';
 // 发送验证码
-let yanCodeUrl = '/core/api/customer/getMobileCode';
+let yanCodeUrl = '';
 // 修改手机号
-let changembileUrl = '/core/api/sales/Customer_changeMobile';
+let changembileUrl = '';
 // 商品详情
-let goodsDetailUrl = '/core/api/sales/op/mall/Goods_loadGoodsHomeVOByList';
+let goodsDetailUrl = '';
 // 规格筛选
-let goodsSKuCheckUrl = '/core/api/sales/op/mall/Goods_checkSpec';
+let goodsSKuCheckUrl = '';
 // 登录页登录
-let loginUrl = '/core/system/Login_customerRegisterAndLogin';
+let loginUrl = '';
 // 退出登录
-let loginOutUrl = '/core/api/sales/Login_login_out';
+let loginOutUrl = '';
 // 获取初始收藏分类数据
-let collectGoodsUrl = '/core/api/sales/Collection_listGoodsInitial';
+let collectGoodsUrl = '';
 // 根据分类id获取商品
-let categrayGoodsUrl = '/core/api/sales/Collection_pagerGoodsHomeVOByCategory';
+let categrayGoodsUrl = '';
 // 查看已有订单列表
-let orderFinishListUrl = '/core/api/sales/op/mall/Order_listOrder';
+let orderFinishListUrl = '';
 // 我的详情
-let ownDetailUrl = '/core/api/sales/Customer_displayDetail';
+let ownDetailUrl = '';
 // 限时购
-let timeGoodsUrl = '/core/api/sales/op/mall/Goods_goodsHomeVOSale';
+let timeGoodsUrl = '';
 // 主题精选
-let topicGoodsUrl = '/core/api/sales/op/mall/Goods_goodsHomeVOSelected';
+let topicGoodsUrl = '';
 // 客服中心列表
-let customerServerListUrl = '/core/api/sales/Article_serviceCenter';
+let customerServerListUrl = '';
 // 修改地址订单
-let addressChangeUrl = '/core/api/sales/op/mall/Order_changeAddress';
+let addressChangeUrl = '';
 // 支付
-let payUrl = '/core/api/sales/op/mall/Order_payOrder';
+let payUrl = '';
 // 初始订单列表
-let initOrderListUrl = '/core/api/sales/op/mall/Order_listOrderInitial';
+let initOrderListUrl = '';
 // 分页订单列表
-let cancatOrderListUrl = '/core/api/sales/op/mall/Order_listOrderByStatus';
+let cancatOrderListUrl = '';
 
-
-
-// -------------------------德合汇----------------
-// 首页商城文章
-let marketArticleUrl = '/core/api/sales/Article_market';
-// 文章详情
-let articleDetailUrl = '/core/api/sales/Article_detail';
-// 首页文章推荐
-let articleRecUrl = '/core/api/sales/Article_list';
-// 首页消息数量
-let newsNumUrl = '/core/api/sales/Payment_news'
-// 我的
-let myUrl = '/core/api/sales/Payment_invest_summary';
-// 用户各类型投资总额
-// 投资详情
-
-
-
-// 修改地址
-let changeaddressUrl = '/core/api/sales/Customer_changeHomeAddress';
-// 修改身份证
-let chengeIdcardUrl = '/core/api/sales/Customer_changeIdCard';
-// 校验银行卡号
-// 新增收藏
-let newcollectUrl = '/core/api/sales/Collection_newOrDelete';
-
-// 查看积分
-let coreUrl = '/core/api/sales/Score_detail';
-// 用户部分信息
-let userPartInfoUrl = '/core/api/sales/Customer_simplifyDetail';
-
-/*----------------商城相关接口------------------*/
-// 商品列表
-// let goodsListUrl = '/core/api/sales/op/mall/Goods_listGoodsVO'; // /core/op/mall/Goods_list
-// 
- // /core/op/mall/Order_list
-
-// 系统提示信息
-let investMessageUrl = '/core/api/system/System_getSystemConfigByKey';
 export const server = {
     // 暴露变量出去
     changeUsernameUrl,
